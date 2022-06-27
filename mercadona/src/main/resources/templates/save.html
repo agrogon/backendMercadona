@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <!-- Bootstrap CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+  </head>
+  <body>
+    <div class="container">
+      <br>
+      <h2> Agregar Producto</h2>
+      <form action="#" th:action="@{/save}" th:object="${product}" method="post">
+      <input type="hidden" th:field="*{id}" name="id" id="id">
+        <div class="form-group">
+          <label for="nombre">Producto</label>
+          <input type="text" class="form-control" id="name" th:field="*{name}" name="name">
+        </div>
+        <div class="form-group">
+          <label for="nombre">URL</label>
+          <input type="text" class="form-control" id="uRL" th:field="*{uRL}" name="uRL">
+        </div>
+        <div class="form-group">
+          <label for="nombre">Peso(gr)</label>
+          <input type="number" class="form-control" id="size" th:field="*{size}" name="size">
+        </div>
+        <button type="submit" class="btn btn-success">Guardar</button>
+      </form>
+    </div>
+  </body>
+</html>
